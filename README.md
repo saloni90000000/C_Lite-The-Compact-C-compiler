@@ -1,33 +1,52 @@
 # C_Lite-:The Compact C compiler
-# System Call Monitoring for Security
+# Mini C Compiler
 
-This is a security-focused project aimed at monitoring system calls and running processes in real-time on a Windows system. The goal is to detect and alert the user about suspicious or unauthorized activities and provide control to terminate such processes.
+This is a mini compiler for the C programming language, developed as part of an academic project under the subject *Compiler Design*. The main aim is to understand and implement the basic components of a compiler including **lexical analysis**, **syntax analysis**, and **intermediate code generation**.
 
-> *Note:* This project is currently *incomplete* and under development.
+> **Note:** This project is currently **incomplete** and under active development.
 
-## Features
+---
 
-- Logs all running processes with timestamp and memory usage
-- Detects suspicious processes like mimikatz.exe, keylogger.exe, etc.
-- Provides alerts and option to terminate the suspicious process
-- Parses Sysmon XML logs for deep event analysis
-- GUI built using Python (Tkinter) for ease of use
+## Project Objective
 
-## Technologies Used
+To build a simplified version of a C compiler that takes a `.c` source file and performs the following:
 
-- *C* (Process Monitoring using Windows API)
-- *Python* (GUI and XML Parsing)
-- *Tkinter* (Graphical User Interface)
-- *Sysmon* (System Monitoring logs)
-- *Windows API* (Process handling and logging)
+- Tokenizes the input (lexical analysis)
+- Checks for syntax validity (parsing)
+- Displays tokens and grammar rules
+- Generates intermediate representation (planned)
+- Reports errors where applicable
 
-## Current Components
+---
 
-- final_s.c: Logs active processes and detects suspicious activity
-- gui_parser.py: Python GUI for selecting and parsing Sysmon logs; also allows manual process termination
+## Technologies & Tools Used
 
-## How to Run
+- **C Programming Language** – Core implementation
+- **Lex/Flex** – Lexical analyzer generator
+- **Yacc/Bison** – Syntax analyzer (parser generator)
+- **GCC** – For compiling C programs and generated code
+- **Linux Environment / Terminal**
 
-1. Compile the C file using GCC:
-   ```bash
-   gcc -o process_monitor.exe final_s.c -lpsapi
+---
+
+## Project Structure
+
+```bash
+Mini-C-Compiler/
+├── lexer.l           # Lexical analyzer definitions
+├── parser.y          # Yacc/Bison parser definitions
+├── input.c           # Sample input C file
+├── symbol_table.txt  # (Planned) symbol table output
+├── intermediate.txt  # (Planned) intermediate code output
+├── README.md         # Project documentation
+To-Do / Incomplete Work
+
+Add semantic analyzer for type checking
+
+Implement symbol table (store variable info)
+
+Generate intermediate representation (3AC)
+
+Add more production rules (loops, if-else, functions)
+
+Build a basic GUI for input/output (
